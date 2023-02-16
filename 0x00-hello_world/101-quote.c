@@ -2,7 +2,7 @@
 #include <unistd.h>
 /**
  * main - Entry point
- * This program prints exactly and that piece of art is useful to the standard error
+ * This program prints to the standard error
  * Return: Always 1 (Success)
  */
 int main(void)
