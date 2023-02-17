@@ -9,8 +9,12 @@ int main(void)
 	char c;
 
 	for (c = 0; c < 16; c++)
-	{
+	{ 
+	if (c < 10){
 		putchar(c + '0');
+	} else {
+		putchar(c - 10 + 'c');
+	}
 	}
 	putchar('\n');
 	return (0);
