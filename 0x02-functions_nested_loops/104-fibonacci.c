@@ -8,21 +8,44 @@
 
 int main(void)
 {
-	int x;
-	unsigned int prev = 1, curr = 2, next;
+	int count;
+	unsigned long F1 = 0, F2 = 1, sum;
+	unsigned long F1_H1, F1_H2, F2_H1, F2_H2;
+	unsigned long H1, H2;
 
-	printf("%u, %u, ", prev, curr);
-
-	for (x = 2; x < 98; x++)
+	for (count = 0; count < 92; count++)
 	{
-		next = prev + prev;
-		prev = curr;
-		curr = next;
-		printf("%u", next);
-		if (x != 97)
+		sum = F1 + F2;
+		printf("%lu, ", sum);
+
+		F1 = F2;
+		F2 = sum;
+	}
+
+	F1_H1 = F1 / 10000000000;
+	F2_H1 = F2 / 10000000000;
+	F1_H2 = F1 % 10000000000;
+	F2_H2 = F2 % 10000000000;
+
+	for (count = 93; count < 99; count++)
+	{
+		H1 = F1_H1 + F2_H1;
+		H2 = F1_H2 + F2_H2;
+		if (F1_H2 + F2_H2 > 9999999999)
+		{
+			H1 += 1;
+			H2 %= 10000000000;
+		}
+
+		printf("%lu%lu", H1, H2);
+		if (count != 98)
 			printf(", ");
+
+		F1_H1 = F2_H1;
+		F1_H2 = F2_H2;
+		F2_H1 = H1;
+		F2_H2 = H2;
 	}
 	printf("\n");
-
 	return (0);
 }
