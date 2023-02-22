@@ -8,7 +8,8 @@
 
 int main(void)
 {
-	int sum = 0
+	int x;
+	int sum = 0;
 
 	for (int x = 0; x < 1024; x++)
 	{
@@ -17,6 +18,6 @@ int main(void)
 			sum += x;
 		}
 	}
-	printf("d%\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
