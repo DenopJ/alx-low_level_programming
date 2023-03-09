@@ -1,20 +1,6 @@
 #include "main.h"
 
 /**
- * is_palindrome - A fucntion that evaluates if a string is palindromic
- * @s: Parameter
- * Return: Always int (Success)
- */
-
-int is_palindrome(char *s)
-{
-	if (*s == '\0')
-		return (1);
-	return (eval(s, 0, _strlen_recursion(s) - 1));
-}
-
-
-/**
  * _strlen_recursion - A function that returns the length of a string
  * @s: Parameter
  * Return: Always int (Success)
@@ -45,4 +31,17 @@ int eval(char *s, int x, int y)
 		return (0 + eval(s, x + 1, y - 1));
 	}
 	return (0);
+}
+
+/**
+ * is_palindrome - A function that evaluates if a string is palindromic
+ * @s: Parameter
+ * Return: Always int (Success)
+ */
+
+int is_palindrome(char *s)
+{
+	if (*s == '\0')
+		return (1);
+	return (eval(s, 0, _strlen_recursion(s) - 1));
 }
