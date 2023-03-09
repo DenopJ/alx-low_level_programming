@@ -15,7 +15,7 @@ int is_palindrome(char *s)
 
 
 /**
- * _strlen_recursion - A fucntion that returns the length of a string
+ * _strlen_recursion - A function that returns the length of a string
  * @s: Parameter
  * Return: Always int (Success)
  */
@@ -38,11 +38,11 @@ int _strlen_recursion(char *s)
 
 int eval(char *s, int x, int y)
 {
-	if (*(s + x) != *(s + y - 1))
-		return (0)
-
-	if (x >= y)
-		return (1);
-	else
-		return (eval(s, x + 1, y - 1));
+	if (*(s + x) == *(s + y))
+	{
+		if (x == y || x == y + 1)
+			return (1);
+		return (0 + eval(s, x + 1, y - 1));
+	}
+	return (0);
 }
